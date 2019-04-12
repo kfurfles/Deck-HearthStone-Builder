@@ -1,0 +1,2 @@
+// INFO ACTIONS
+export const INFO_SET_INFO  = 'SET_INFO'
