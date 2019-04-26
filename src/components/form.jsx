@@ -1,14 +1,28 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-import { InputEl } from './formElements'
+import { InputEl, ButtonEl, SelectEl } from './formElements'
 
 class Form extends Component {
-    constructor(props){
-        super(props)
+    constructor(){
+        super()
+        this.state = {
+            options:[
+                { text: '1foo', value: '1zoo '},
+                { text: '2foo', value: '2zoo '},
+                { text: '3foo', value: '3zoo '}
+            ],
+            form: {
+                name: 'Teste',
+                type: null
+            }
+        } 
     }
     
+    handleInput(field, value){
+        console.log(field,value)
+    }
     render() {
         let loader = '';
+        const form = this.state.form
         if(this.props.busy){
             loader = <div className="ml-2 spinner-border text-light  form__button--loader" role="status">
                         <span className="sr-only">Loading...</span>
@@ -17,16 +31,22 @@ class Form extends Component {
         return(
         <form>
             <div className="row">
-                <InputEl busy={this.props.busy} name={'name'} placeholder={ 'Digite seu Nome' } />
+                <div className="col">
+                    <InputEl value={form.name} onInput={this.handleInput.bind()} busy={this.props.busy} name={'name'} placeholder={ 'Digite seu Nome' } />
+                </div>
             </div>
             <div className="row">
-                <InputEl busy={this.props.busy} name={'description'} placeholder={ 'Digite a descrição' } />
+                <div className="col">
+                    <SelectEl busy={this.props.busy} options={this.state.options}></SelectEl>
+                </div>
             </div>
             <div className="d-flex ml-auto mr-auto align-items-center justify-content-center">
-                <button type="submit" className="btn btn-primary d-flex align-items-center">
-                Submit
-                {loader}
-                </button>
+                <div className="col">
+                    <ButtonEl>
+                    Submit
+                    {loader}
+                    </ButtonEl>
+                </div>
             </div>       
         </form>
 

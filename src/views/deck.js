@@ -1,16 +1,19 @@
-import React from 'react'
-import Table from './../components/table'
+import React, { Component } from 'react'
 
-export default class Deck extends React.Component {
-    render() {
+import Form from './../components/form.jsx'
+
+export default class Deck extends Component {
+    state = {
+        busy: !true,
+        form: {}
+    }
+    render () {
         return(
-        <div className="row mt-3">
+        <div className="row"> 
             <div className="col-md-6 offset-md-3">
-                <Table/>
+                <Form busy={this.state.busy} />
             </div>
         </div>
         )
     }
-
-    componentDidMount(){}
 }

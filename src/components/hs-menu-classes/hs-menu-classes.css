@@ -1,0 +1,80 @@
+.hs-menu-classes .character{
+    border-radius: 5px;
+    margin: 5px;
+    border:none;
+    position: relative;
+}
+.character__wrapper{
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+.character img{
+    width: 100%;
+    height: auto;
+}
+.character__image{
+    position: relative;
+}
+
+.character__image:after{
+    cursor: pointer;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 200ms all;
+    z-index: 1;
+}
+
+
+.character__info{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    text-transform: capitalize;
+    opacity: 0;
+    visibility: hidden;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 200ms all;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.character__info > span{
+    color: #fff;
+    font-size: 30px;
+    margin-bottom: 1rem;
+}
+.character__heroPower span:last-child{
+    color: #fff;
+}
+
+.character__heroPower span:first-child{
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.character__description{
+    color: #fff;
+    max-height: 3rem;
+    text-overflow: clip;
+    font-size: 12px;
+}
+
+.character__heroPower{
+    /* white-space: nowrap; */
+}
+.character:hover .character__info{
+    opacity: 1;
+    visibility: visible;
+}
+.character:hover .character__image:after{
+    background-color: rgba(0,0,0,0.5);
+}

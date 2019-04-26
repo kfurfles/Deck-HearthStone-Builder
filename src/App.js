@@ -10,16 +10,8 @@ import { setInfo } from './actions/hearthStone/info'
 import { connect } from 'react-redux';
 
 class App extends Component {
-    constructor(props){
-        super(props)
-        // const { dispatch } = this.props
-        // this.boundActionCreators = bindActionCreators(setInfo, dispatch);
-
-        // console.log(mapDispatchToProps('foo'))
-    }
-
     async componentWillMount(){
-        this.props.setInfo(await getInfo())
+        // this.props.setInfo(await getInfo())
     }
 
     render() {

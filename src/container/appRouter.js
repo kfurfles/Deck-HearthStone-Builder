@@ -11,7 +11,7 @@ export default function AppRouter (props) {
         <div className="container">
             <Route path="/" exact component={Search}></Route>
             <Route path="/search/" component={Search}></Route>
-            <Route path="/list/" component={Deck}></Route>
+            <Route path="/deck/" component={Deck}></Route>
         </div>
     </Router>
     )

@@ -1,17 +1,17 @@
 import React, { Component } from 'react'
 
-import Form from './../components/form.jsx'
+import MenuClasses from './../components/hs-menu-classes/menu.jsx'
 
 export default class Search extends Component {
     state = {
-        busy: true,
+        busy: !true,
         form: {}
     }
     render () {
         return(
         <div className="row"> 
-            <div className="col-md-6 offset-md-3">
-                <Form busy={this.state.busy} />
+            <div className="col">
+                <MenuClasses/>
             </div>
         </div>
         )
