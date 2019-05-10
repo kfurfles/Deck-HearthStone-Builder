@@ -1,7 +1,7 @@
 const heroPowerBg = 'https://d2q63o9r0h0ohi.cloudfront.net/images/game-guide/heroes/hero-powers.png'
 export const data = [
     {
-        full: require('./../../assets/anduin-full.jpg'),
+        thumb: require('./../../assets/anduin-full.jpg'),
         bg: require('./../../assets/anduin.jpg'),
         data: {
             name: 'anduin',
@@ -12,12 +12,12 @@ export const data = [
                 heroPower: 'Lesser Heal',
                 description: 'Restore 2 Health.',
                 color: '#b001d6',
-                text: '#fff'
+                variation: 'black'
             }
         }
     },
     {
-        full: require('./../../assets/garrosh-full.jpg'),
+        thumb: require('./../../assets/garrosh-full.jpg'),
         bg: require('./../../assets/garrosh.jpg'),
         data: {
             name: 'garrosh',
@@ -28,12 +28,12 @@ export const data = [
                 heroPower: 'Armor Up!',
                 description: 'Gain 2 Armor.',
                 color: '#feb246',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },
     {
-        full: require('./../../assets/guldan-full.jpg'),
+        thumb: require('./../../assets/guldan-full.jpg'),
         bg: require('./../../assets/guldan.jpg'),
         data: {
             name: 'guldan',
@@ -44,12 +44,12 @@ export const data = [
                 heroPower: 'Life Tap',
                 description: 'Draw a card and take 2 damage.',
                 color: '#b165ff',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },
     {
-        full: require('./../../assets/janna-full.jpg'),
+        thumb: require('./../../assets/janna-full.jpg'),
         bg: require('./../../assets/janna.jpg'),
         data: {
             name: 'janna',
@@ -60,12 +60,12 @@ export const data = [
                 heroPower: 'Fireblast',
                 description: 'Deal 1 damage.',
                 color: '#40e6ee',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },
     {
-        full: require('./../../assets/malfurion-full.jpg'),
+        thumb: require('./../../assets/malfurion-full.jpg'),
         bg: require('./../../assets/malfurion.jpg'),
         data: {
             name: 'malfurion',
@@ -76,12 +76,12 @@ export const data = [
                 heroPower: 'Shapeshift',
                 description: '+1 Attack this turn. +1 Armor.',
                 color: '#c40501',
-                text: '#fff'
+                variation: 'black'
             }
         }
     },
     {
-        full: require('./../../assets/rexxar-full.jpg'),
+        thumb: require('./../../assets/rexxar-full.jpg'),
         bg: require('./../../assets/rexxar.jpg'),
         data: {
             name: 'rexxar',
@@ -92,12 +92,12 @@ export const data = [
                 heroPower: 'Steady Shot',
                 description: 'Deal 2 damage to the enemy hero.',
                 color: '#8af549',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },
     {
-        full: require('./../../assets/thrall-full.jpg'),
+        thumb: require('./../../assets/thrall-full.jpg'),
         bg: require('./../../assets/thrall.jpg'),
         data: {
             name: 'thrall',
@@ -108,12 +108,12 @@ export const data = [
                 heroPower: 'Totemic Call',
                 description: 'Summon a random Totem.',
                 color: '#277dff',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },
     {
-        full: require('./../../assets/uther-full.jpg'),
+        thumb: require('./../../assets/uther-full.jpg'),
         bg: require('./../../assets/uther.jpg'),
         data: {
             name: 'uther',
@@ -124,12 +124,12 @@ export const data = [
                 heroPower: 'Reinforce',
                 description: 'Summon a 1/1 Silver Hand Recruit.',
                 color: '#ec8ca9',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },
     {
-        full: require('./../../assets/valeeta-full.jpg'),
+        thumb: require('./../../assets/valeeta-full.jpg'),
         bg: require('./../../assets/valeeta.jpg'),
         data: {
             name: 'valeeta',
@@ -140,7 +140,7 @@ export const data = [
                 heroPower: 'Dagger Mastery',
                 description: 'Equip a 1/2 Dagger.',
                 color: '#cef549',
-                text: '#fff'
+                variation: 'white'
             }
         }
     },

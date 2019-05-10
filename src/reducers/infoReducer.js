@@ -10,7 +10,6 @@ const initialState = {
     types: [],
     sets: [],
     wild: []
-
 }
 
 export const infoReducer = (state = initialState, action) =>{

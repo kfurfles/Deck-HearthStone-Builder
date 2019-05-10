@@ -11,7 +11,7 @@ import { connect } from 'react-redux';
 
 class App extends Component {
     async componentWillMount(){
-        // this.props.setInfo(await getInfo())
+        this.props.setInfo(await getInfo())
     }
 
     render() {

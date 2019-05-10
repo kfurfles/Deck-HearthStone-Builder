@@ -1,9 +1,31 @@
+.hs-menu-classes{
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms all;
+}
 .hs-menu-classes .character{
     border-radius: 5px;
     margin: 5px;
     border:none;
     position: relative;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s all !important;
+    opacity: 1;
+    visibility: visible;
 }
+
+.character.isFade{
+    opacity: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.character.isDetails{
+    height: auto;
+    width: 100%;
+    transform: translate(0px, 0px) !important;
+}
+
 .character__wrapper{
     overflow: hidden;
     border-radius: 5px;
@@ -46,13 +68,14 @@
     justify-content: center;
     width: 100%;
     text-align: center;
+    color: #fff;
 }
 .character__info > span{
-    color: #fff;
     font-size: 30px;
     margin-bottom: 1rem;
 }
-.character__heroPower span:last-child{
+
+.character__info .btn:hover{
     color: #fff;
 }
 
@@ -62,7 +85,6 @@
 }
 
 .character__description{
-    color: #fff;
     max-height: 3rem;
     text-overflow: clip;
     font-size: 12px;
@@ -77,4 +99,58 @@
 }
 .character:hover .character__image:after{
     background-color: rgba(0,0,0,0.5);
+}
+
+
+.character__stats{
+    height: calc(100vh - 90px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 5px;
+    overflow: hidden;
+    background-repeat: no-repeat !important;
+    background-position: center 0 !important;
+    background-size: cover !important;
+    position: relative;
+}
+
+.character__stats .close{
+    position: absolute;
+    top: 10px;
+    left: 16px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: inherit;
+}
+
+.character__stats.black{
+    color: #333;
+}
+
+.character__stats.white{
+    color: #c6c6c6;
+}
+
+.character__stats-info {
+    max-width: 480px;
+}
+
+.black .character__stats-spell{
+    color: #333;
+}
+.white .character__stats-spell, .white .character__stats-name{
+    color: #fff;
+}
+
+.character__stats-spell{
+    font-size: 1.5rem;
+    font-family: 'Belwe Bold';
+}
+
+.character__stats-name {
+    font-family: 'Belwe Bold';
+    text-transform: capitalize;
+    font-size: 2rem;
 }
