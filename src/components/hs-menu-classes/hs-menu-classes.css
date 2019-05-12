@@ -3,7 +3,6 @@
 }
 .hs-menu-classes .character{
     border-radius: 5px;
-    margin: 5px;
     border:none;
     position: relative;
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 0.7s all !important;
@@ -24,6 +23,7 @@
     height: auto;
     width: 100%;
     transform: translate(0px, 0px) !important;
+    margin: 20px 0;
 }
 
 .character__wrapper{
@@ -101,15 +101,13 @@
     background-color: rgba(0,0,0,0.5);
 }
 
-
 .character__stats{
-    height: calc(100vh - 90px);
+    height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-radius: 5px;
-    overflow: hidden;
     background-repeat: no-repeat !important;
     background-position: center 0 !important;
     background-size: cover !important;
@@ -123,6 +121,7 @@
     cursor: pointer;
     font-size: 2rem;
     color: inherit;
+    z-index: 1;
 }
 
 .character__stats.black{
@@ -135,6 +134,9 @@
 
 .character__stats-info {
     max-width: 480px;
+}
+@media (max-width: 768px){
+    
 }
 
 .black .character__stats-spell{
@@ -153,4 +155,46 @@
     font-family: 'Belwe Bold';
     text-transform: capitalize;
     font-size: 2rem;
+}
+
+@media (max-width: 768px){
+    .character__stats{
+        background: none !important;
+    }
+    .character__img-container{
+        margin: 0 -1.5rem 0;
+        width: calc(100% + 3rem) !important;
+        position: relative;
+        height: 0;
+        padding-top: 58.7%;
+        overflow: hidden;
+        border-radius: 5px 5px 0 0;
+    }
+    .character__stats-img{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 180% !important;
+        height: 100% !important;
+        transform: translateX(-50%);
+    }
+    .character__stats-info {
+        max-width: 100%;
+        padding-top: 0!important;
+        height: 100%;
+    }
+    .character__img-container{
+        display: none;
+    }
+}
+
+
+@media (max-width: 992px){
+    .character .character__info{
+        opacity: 1;
+        visibility: visible;
+    }
+    .character .character__image:after{
+        background-color: rgba(0,0,0,0.5);
+    }
 }

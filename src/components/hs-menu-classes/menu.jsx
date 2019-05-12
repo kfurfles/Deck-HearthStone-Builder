@@ -52,7 +52,7 @@ export default class MenuClasses extends React.Component {
         })
         setTimeout(() => {
             this.magicGrid.positionItems(); 
-        }, 100);
+        }, 300);
     }
 
     onClose(){
@@ -83,6 +83,7 @@ export default class MenuClasses extends React.Component {
         }, 100);
     }
     componentDidMount() {
+        console.log(this)
         this.mountGrid()
     }
     

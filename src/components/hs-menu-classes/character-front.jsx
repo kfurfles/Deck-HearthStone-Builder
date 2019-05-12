@@ -1,21 +1,9 @@
 import React from 'react'
 import HabilityDescription from './../shared/habilityDescription'
 
-function customStyle(name, { color, text }){
-    return `
-        .${name} .btn{
-            color: ${color};
-            border-color: ${color};
-        }
-        .${name} .btn:hover{
-            background: ${color};
-            color: ${text};
-        }`;
-}
 export default function Character({ thumb, info: { data: { name, hability, description } } , onClick }){
     return(
         <div className="character__wrapper">
-            <style scoped jsx="true">{customStyle(name,hability) }</style>
             <div className="character__image">
                 <img src={thumb} alt={`Class hero ${name}`} style={{width:'300px'}}/>
             </div>

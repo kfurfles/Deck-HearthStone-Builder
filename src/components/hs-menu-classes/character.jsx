@@ -34,9 +34,19 @@ export default class Character extends React.Component{
         close()
     }
     colorStyle(){
-        return `.${this.name} [hero="${this.name}"]{
-            color: ${this.props.chr.data.hability.color};
-        }`
+        const { hability : { color, variation }, name } = this.props.chr.data
+        return `
+            .${this.name} [hero="${this.name}"]{
+                color: ${this.props.chr.data.hability.color};
+            }
+            .${name} .btn{
+                color: ${color};
+                border-color: ${color};
+            }
+            .${name} .btn:hover{
+                background: ${color};
+                color: white;
+            }`; 
     }
     
 
