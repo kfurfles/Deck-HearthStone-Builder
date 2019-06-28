@@ -14,9 +14,10 @@ export async function getCardsByClass(className){
                 resolve({
                     data: getListByClass(className)
                 })      
-            }, 500);
+            }, 0);
         })
     } else {
+        className = className[0].toUpperCase() + className.slice(1)
         const onlyValidServer = (card) => {
             if (card.img) {
                 return !/wow\./.test(card.img)

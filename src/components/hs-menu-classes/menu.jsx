@@ -7,30 +7,38 @@ import Character from './character'
 import { isNull } from 'util';
 
 export default class MenuClasses extends React.Component {
+    state = {
+        list: data,
+        selected: null,
+        auxClass: ''
+    }
     constructor(){
         super()
-        this.state = {
-            list: data,
-            selected: null
-        }
         this.el = React.createRef();
         this.magicGrid = ''
         this.onSelected.bind(this)
     }
     render(){
+        const { list, auxClass } =this.state
+        
         return (
-            <div className="hs-menu-classes" ref={this.el}>
-                {this.state.list.map((chr,i) =>{
+            <div >
+                <div className="text-center">
+                    <h1>HearthStone</h1>
+                </div>
+                <div className={`hs-menu-classes `+ auxClass } ref={this.el}>
+                {list.map((chr,i) =>{
                     return <Character
-                                key={i}
-                                chr={chr}
-                                index={i}
-                                details={this.showDetail(i)}
-                                show={this.showCard(i)}
-                                onClick={this.onSelected.bind(this)} 
-                                onClose={this.onClose.bind(this)}
-                            />
+                    key={i}
+                    chr={chr}
+                    index={i}
+                    details={this.showDetail(i)}
+                    show={this.showCard(i)}
+                    onClick={this.onSelected.bind(this)} 
+                    onClose={this.onClose.bind(this)}
+                    />
                 })}
+                </div>
             </div>
         )
     }
@@ -42,6 +50,8 @@ export default class MenuClasses extends React.Component {
             return false
         }
     }
+
+
     showCard(index){
         return isNull(this.state.selected) ? true : this.state.selected === index
     }
@@ -49,21 +59,25 @@ export default class MenuClasses extends React.Component {
         this.setState({
             ...this.state,
             selected: heroId
+        }, ()=>{
+            this.magicGrid.positionItems();
+            this.setState({ auxClass: '' })
         })
-        setTimeout(() => {
-            this.magicGrid.positionItems(); 
-        }, 300);
+        
+        window.scrollTo(0, 0);
     }
 
     onClose(){
+        this.setState({ auxClass: 'overlay' })
         this.setState({
             ...this.state,
             selected: null
         })
-        this.gridUpdate();
+        this.mountGrid()
     }
 
     mountGrid(){
+        this.setState({ auxClass: 'overlay' })
         const { current } = this.el
         this.magicGrid = new MagicGrid({
             container: current,
@@ -74,17 +88,19 @@ export default class MenuClasses extends React.Component {
             useTransform: true,
             items: this.state.list.length,
         });
-        this.gridUpdate();
+        this.gridUpdate();        
     }
     gridUpdate(){
         setTimeout(() => {
             this.magicGrid.listen();
             this.magicGrid.positionItems();
-        }, 100);
+        }, 200);
+        setTimeout(() => {
+            this.setState({ auxClass: '' })
+        }, 600);
+        
     }
-    componentDidMount() {
-        console.log(this)
+    componentDidMount() {        
         this.mountGrid()
     }
-    
 }

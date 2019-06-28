@@ -1,0 +1,11 @@
+.icon-back{
+    margin-right: 10px;
+    cursor: pointer;
+}
+.icon-back svg{
+    width: 25px;
+    height: 25px;
+}
+.header h1{
+    margin-bottom: 0;
+}

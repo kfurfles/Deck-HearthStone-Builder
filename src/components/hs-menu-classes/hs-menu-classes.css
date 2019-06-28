@@ -1,6 +1,14 @@
 .hs-menu-classes{
     transition: cubic-bezier(0.075, 0.82, 0.165, 1) 500ms all;
+    opacity: 1;
+    visibility: visible;
 }
+
+.hs-menu-classes.overlay{
+    opacity: 0;
+    visibility: hidden;
+}
+
 .hs-menu-classes .character{
     border-radius: 5px;
     border:none;
@@ -24,6 +32,7 @@
     width: 100%;
     transform: translate(0px, 0px) !important;
     margin: 20px 0;
+    z-index: 1;
 }
 
 .character__wrapper{
@@ -117,33 +126,15 @@
 .character__stats .close{
     position: absolute;
     top: 10px;
-    left: 16px;
+    right: 16px;
     cursor: pointer;
     font-size: 2rem;
     color: inherit;
     z-index: 1;
 }
 
-.character__stats.black{
-    color: #333;
-}
-
-.character__stats.white{
-    color: #c6c6c6;
-}
-
 .character__stats-info {
     max-width: 480px;
-}
-@media (max-width: 768px){
-    
-}
-
-.black .character__stats-spell{
-    color: #333;
-}
-.white .character__stats-spell, .white .character__stats-name{
-    color: #fff;
 }
 
 .character__stats-spell{
@@ -157,7 +148,26 @@
     font-size: 2rem;
 }
 
-@media (max-width: 768px){
+@media (min-width: 992px){
+    .character__stats.black{
+        color: #333;
+    }
+    
+    .character__stats.white{
+        color: #c6c6c6;
+    }
+
+    .black .character__stats-spell{
+        color: #333;
+    }
+    .white .character__stats-spell, .white .character__stats-name{
+        color: #fff;
+    }
+    .character__img-container{
+        display: none;
+    }
+}
+@media (max-width: 992px){
     .character__stats{
         background: none !important;
     }
@@ -168,7 +178,8 @@
         height: 0;
         padding-top: 58.7%;
         overflow: hidden;
-        border-radius: 5px 5px 0 0;
+        border-radius: 5px;
+        box-shadow: 1px 6px 4px rgba(0,0,0,0.2);
     }
     .character__stats-img{
         position: absolute;
@@ -183,13 +194,6 @@
         padding-top: 0!important;
         height: 100%;
     }
-    .character__img-container{
-        display: none;
-    }
-}
-
-
-@media (max-width: 992px){
     .character .character__info{
         opacity: 1;
         visibility: visible;
@@ -198,3 +202,4 @@
         background-color: rgba(0,0,0,0.5);
     }
 }
+
